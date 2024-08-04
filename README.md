@@ -9,7 +9,7 @@ my dotfiles
 
 ## install
 
-```
+```bash
 stow .
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # in tmux -> prefix+I
