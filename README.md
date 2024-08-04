@@ -4,6 +4,6 @@ my dotfiles
 
 ## install
 
-'''
+```
 stow .
-'''
+```
