@@ -19,6 +19,11 @@ alias c='clear'
 alias '..'='cd ..'
 alias vim=nvim
 
+lfcd () {
+    # `command` is needed in case `lfcd` is aliased to `lf`
+    cd "$(command lf -print-last-dir "$@")"
+}
+
 # prompt
 autoload -Uz vcs_info
 precmd() { vcs_info }
