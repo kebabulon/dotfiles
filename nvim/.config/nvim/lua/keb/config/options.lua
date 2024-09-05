@@ -13,7 +13,7 @@ vim.opt.smartindent = true
 vim.opt.wrap = false
 
 -- swapfile good, actually
--- vim.opt.swapfile = false
+vim.opt.swapfile = true
 -- vim.opt.backup = false
 
 -- TODO: figure this out, not a fan of ~/.vim

@@ -69,7 +69,7 @@ repos=(
 
   zsh-users/zsh-completions
   zsh-users/zsh-autosuggestions
-  zsh-users/zsh-history-substring-search
+  zsh-users/zsh-history-substring-search # TODO: fzf history search
 
   zdharma-continuum/fast-syntax-highlighting
 )

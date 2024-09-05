@@ -1,8 +1,9 @@
 return {
     "folke/trouble.nvim",
     config = function()
-        require("trouble").setup {
-            icons = false,
-        }
+        -- https://github.com/folke/trouble.nvim/issues/96
+        require("trouble").setup({
+
+        })
     end
 }
