@@ -26,6 +26,12 @@ bindsym $mod+Shift+Return exec firefox
 bindsym $mod+d exec $menu
 bindsym print exec grim - | satty --filename - --fullscreen --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png
 
+exec_always $term -w 1600x900 --title mathpad ipython 
+for_window [title="mathpad"] move scratchpad
+for_window [title="mathpad"] resize set width 1600 height 900
+for_window [title="mathpad"] border pixel 4
+bindsym $mod+m [title="mathpad"] scratchpad show
+
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
 
@@ -87,9 +93,6 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
-bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+minus scratchpad show
-
 mode "resize" {
     bindsym $left resize shrink width 10px
     bindsym $down resize grow height 10px
@@ -117,9 +120,9 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%-
 
 font FiraCode 7
 
-client.focused #000000 #000000 #cdd6f4 #2e9ef4 #285577
+# client.focused #000000 #000000 #cdd6f4 #2e9ef4 #285577
 
-client.focused          #1e1e2e #1e1e2e #cdd6f4 #2e9ef4   #285577
+client.focused          #1e1e2e #1e1e2e #cdd6f4 #2e9ef4   #1e1e2e
 client.focused_inactive #1e1e2e #1e1e2e #cdd6f4 #484e50   #5f676a
 client.unfocused        #000000 #000000 #cdd6f4 #292d2e   #222222
 client.urgent           #000000 #f38ba8 #000000 #900000   #900000
