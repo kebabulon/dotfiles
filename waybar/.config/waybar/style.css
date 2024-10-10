@@ -58,8 +58,8 @@ window#waybar {
 /* sway/scratchpad */
 #scratchpad {
     /*padding: 1px 0px;*/
-    background-color: #e78a4e;
-    color: #282828;
+    background-color: @focus;
+    color: @fg;
 }
 
 /* sway/workspaces */

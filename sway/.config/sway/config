@@ -9,16 +9,35 @@ set $right l
 set $term foot
 set $menu fuzzel
 
+# output
 exec swayidle -w \
          timeout 300 'swaylock -f' \
          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock -f'
 
+output "GIGA-BYTE TECHNOLOGY CO., LTD. M28U 24050B004110" {
+    mode 2560x1440@144Hz
+    pos 0 0
+}
+
+output "Chimei Innolux Corporation 0x1521 Unknown" {
+    pos 2560 0
+}
+
+# output HDMI1 pos 0 0 res 1920x1080
+# output eDP2 pos -1920 0 res 1920x1080
+
+# input
 input type:keyboard {
 	xkb_layout us(dvorak),ru
 	xkb_options grp:lalt_lshift_toggle
 	repeat_rate 45
 	repeat_delay 150
+}
+
+input "1133:49298:Logitech_G102_LIGHTSYNC_Gaming_Mouse" {
+    accel_profile "flat"
+    pointer_accel -0.4
 }
 
 bindsym $mod+Return exec $term
@@ -117,6 +136,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 5%+
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%-
 
 # vis
+
 
 font FiraCode 7
 
