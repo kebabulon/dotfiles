@@ -1,2 +1,4 @@
 [general]
 copy-command = "wl-copy"
+fullscreen = true
+initial-tool = "crop"

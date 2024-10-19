@@ -45,7 +45,7 @@ bindsym $mod+Shift+Return exec firefox
 bindsym $mod+d exec $menu
 bindsym print exec grim - | satty --filename - --fullscreen --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png
 
-exec_always $term -w 1600x900 --title mathpad ipython 
+exec $term -w 1600x900 --title mathpad ipython 
 for_window [title="mathpad"] move scratchpad
 for_window [title="mathpad"] resize set width 1600 height 900
 for_window [title="mathpad"] border pixel 4
