@@ -44,6 +44,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec firefox
 bindsym $mod+d exec $menu
 bindsym print exec grim - | satty --filename - --fullscreen --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png
+bindsym $mod+z exec swaylock
 
 exec $term -w 1600x900 --title mathpad ipython 
 for_window [title="mathpad"] move scratchpad
