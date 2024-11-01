@@ -37,7 +37,7 @@ input type:keyboard {
 
 input "1133:49298:Logitech_G102_LIGHTSYNC_Gaming_Mouse" {
     accel_profile "flat"
-    pointer_accel -0.4
+    pointer_accel -0.6
 }
 
 bindsym $mod+Return exec $term

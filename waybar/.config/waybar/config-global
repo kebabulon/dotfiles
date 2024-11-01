@@ -150,10 +150,10 @@
 
     "pulseaudio#source": {
         "format": "{format_source}",
-        "format-source": "",
-        "format-source-muted": "",
+        "format-source": "󰍬",
+        "format-source-muted": "󰍭",
 
-        "on-click": "pactl set-source-mute 0 1 && $HOME/.scripts/progressbar.sh --mic-mute",
+        "on-click": "pactl set-source-mute 0 toggle",
         "on-click-right": "kitty --title floating_term_kitty --detach pulsemixer",
 
         "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1% && $HOME/.scripts/progressbar.sh --mic-volume",

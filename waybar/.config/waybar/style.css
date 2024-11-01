@@ -136,13 +136,13 @@ window#waybar {
 /* pulseaudio#source */
 #pulseaudio.source {
     /*padding: 2px 0px;*/
-    background-color: #ea6962;
-    color: #1b1b1b;
+    background-color: @fg;
+    color: @bg;
 }
 
 #pulseaudio.source.source-muted {
-    background-color: #1b1b1b;
-    color: #d4be98;
+    background-color: @bg;
+    color: @fg;
 }
 
 #network {

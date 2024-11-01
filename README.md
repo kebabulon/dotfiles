@@ -15,4 +15,6 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # TODO: /usr/share/wayland-sessions/sway.desktop --unsupported-gpu fix
 # TODO: /etc/vconsole.conf dvorak
+# TODO: xdg-user-dirs-update
+# TODO: gsettings set org.gnome.desktop.interface gtk-enable-primary-paste false
 ```
