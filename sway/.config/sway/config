@@ -52,6 +52,9 @@ for_window [title="mathpad"] resize set width 1600 height 900
 for_window [title="mathpad"] border pixel 4
 bindsym $mod+m [title="mathpad"] scratchpad show
 
+for_window [app_id="firefox" title="^Picture-in-Picture$"] \
+    floating enable, sticky enable
+
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
 
@@ -152,7 +155,7 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 default_border none
 hide_edge_borders smart_no_gaps
 
-output * bg ~/.wallpapers/vista_dark_3.jpg fill
+output * bg ~/.wallpapers/feet_of_clay_dark.jpg fill
 
 bar {
     swaybar_command waybar

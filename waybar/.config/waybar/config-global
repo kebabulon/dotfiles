@@ -60,6 +60,7 @@
     "clock": {
         "format": "{:%H\n%M\n==\n%d\n%m\n%y}",
         "tooltip": true,
+        "locale": "ru_RU.UTF-8",
         "tooltip-format": "<small>{calendar}</small>",
 
         "calendar": {
@@ -67,11 +68,11 @@
             "weeks-pos": "left",
             "on-scroll": 1,
             "format": {
-                "months": "<span color='#d4be98'><b>{}</b></span>",
-                "weeks": "<span color='#7daea3'><b>W{}</b></span>",
-                "weekdays": "<span color='#d8a657'><b>{}</b></span>",
-                "days": "<span color='#d4be98'><b>{}</b></span>",
-                "today": "<span color='#e78a4e'><b><u>{}</u></b></span>"
+                "months": "<span color='#cdd6f4'><b>{}</b></span>",
+                "weeks": "<span color='#cdd6f4'><b>W{}</b></span>",
+                "weekdays": "<span color='#cdd6f4'><b>{}</b></span>",
+                "days": "<span color='#cdd6f4'><b>{}</b></span>",
+                "today": "<span color='#cdd6f4'><b><u>{}</u></b></span>"
             },
         },
         "actions":  {
