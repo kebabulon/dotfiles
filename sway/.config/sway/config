@@ -24,12 +24,14 @@ output "Chimei Innolux Corporation 0x1521 Unknown" {
     pos 2560 0
 }
 
+output * adaptive_sync on
+
 # output HDMI1 pos 0 0 res 1920x1080
 # output eDP2 pos -1920 0 res 1920x1080
 
 # input
 input type:keyboard {
-	xkb_layout us(dvorak),ru
+	xkb_layout us(dvorak),ru,us
 	xkb_options grp:lalt_lshift_toggle
 	repeat_rate 45
 	repeat_delay 150
@@ -53,7 +55,9 @@ for_window [title="mathpad"] border pixel 4
 bindsym $mod+m [title="mathpad"] scratchpad show
 
 for_window [app_id="firefox" title="^Picture-in-Picture$"] \
-    floating enable, sticky enable
+    floating enable, sticky enable, move position 1370 790
+
+for_window [app_id="satty" title="^satty$"] fullscreen enable
 
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
