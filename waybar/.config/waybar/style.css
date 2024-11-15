@@ -130,7 +130,7 @@ window#waybar {
 }
 
 #pulseaudio.bluetooth {
-    background-color: #7daea3;
+    background-color: @bg;
 }
 
 /* pulseaudio#source */
@@ -164,7 +164,8 @@ window#waybar {
 }
 
 #bluetooth.connected {
-    color: #7daea3;
+    background-color: @fg;
+    color: @bg;
 }
 
 #cpu {
