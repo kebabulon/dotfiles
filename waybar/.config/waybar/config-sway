@@ -15,18 +15,6 @@
             "sway/window",
         ],
 
-        "modules-right": [
-            "tray",
-            "pulseaudio", 
-            "pulseaudio#source",
-            "network", 
-            "bluetooth",
-            "backlight", 
-            "cpu", 
-            "memory", 
-            "temperature", 
-            "battery",
-            "clock"
-        ],
     }
 ]
+

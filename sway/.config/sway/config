@@ -145,6 +145,9 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%-
 
 # vis
 
+# output * bg ~/.wallpapers/feet_of_clay_dark.jpg fill
+set $wallpapers_path ~/.wallpapers/current
+output * bg `find $wallpapers_path -type f | shuf -n 1` fill
 
 font FiraCode 7
 
@@ -159,11 +162,11 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 default_border none
 hide_edge_borders smart_no_gaps
 
-output * bg ~/.wallpapers/feet_of_clay_dark.jpg fill
-
-bar {
-    swaybar_command waybar
-}
+# bar {
+#     swaybar_command "waybar -c ~/.config/waybar/config-sway"
+# }
+# TODO: quick fix but it works!
+exec_always sh -c "killall waybar; waybar -c ~/.config/waybar/config-sway &"
 
 exec mako
 

@@ -3,6 +3,20 @@
 // https://github.com/Alexays/Waybar/wiki/
 
 {
+    "modules-right": [
+        "tray",
+        "pulseaudio", 
+        "pulseaudio#source",
+        "network", 
+        "bluetooth",
+        "backlight", 
+        "cpu", 
+        "memory", 
+        "temperature", 
+        "battery",
+        "clock"
+    ],
+
     "layer": "top", 
     "spacing": 0,
     "width": 36,
