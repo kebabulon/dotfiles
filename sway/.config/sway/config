@@ -21,6 +21,7 @@ output "GIGA-BYTE TECHNOLOGY CO., LTD. M28U 24050B004110" {
 }
 
 output "Chimei Innolux Corporation 0x1521 Unknown" {
+    # mode 1920x1080@144Hz
     pos 2560 0
 }
 
@@ -39,7 +40,7 @@ input type:keyboard {
 
 input "1133:49298:Logitech_G102_LIGHTSYNC_Gaming_Mouse" {
     accel_profile "flat"
-    pointer_accel -0.6
+    pointer_accel -0.7
 }
 
 bindsym $mod+Return exec $term
