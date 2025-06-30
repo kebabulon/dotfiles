@@ -1,0 +1,28 @@
+mpd_music_dir = ~/music
+
+data_fetching_delay = no
+allow_for_physical_item_deletion = no
+
+incremental_seeking = yes
+seek_time = 5
+
+visualizer_data_source                = /tmp/mpd.fifo
+visualizer_output_name                = my_fifo
+visualizer_in_stereo                  = yes
+visualizer_type                       = spectrum
+visualizer_color                      = blue, cyan, green, yellow, magenta, red
+visualizer_look                       = os
+visualizer_fps                        = 60
+visualizer_autoscale                  = yes
+visualizer_spectrum_smooth_look       = yes
+
+user_interface = alternative
+titles_visibility = no
+
+# song_list_format                      = $(red){%a}$(end) $(blue){%t}$(end) $R $(green){%b}$(end) $(magenta)({%l})$(end)
+# song_status_format                    = {$2%a$2} {$3%b$3} {$5%t$5}
+# song_library_format                   = %t
+# song_window_title_format              = {%a-%t}
+# song_columns_list_format              = (28)[210]{a} (36)[218]{t} (29)[183]{b} $R(8)[184]{l}
+# playlist_display_mode                 = columns
+# browser_display_mode                  = columns

@@ -6,6 +6,9 @@ set shellopts '-eu'
 set ifs "\n"
 set cursorpreviewfmt "\033[7;2m"
 
+set incsearch
+set incfilter
+
 ## ACTUAL SETTINGS
 # previwer
 set sixel true
@@ -45,27 +48,28 @@ cmd extract ${{
     esac
 }}
 
-cmd tar ${{
-    set -f
-    mkdir $1
-    cp -r $fx $1
-    tar czf $1.tar.gz $1
-    rm -rf $1
-}}
-
-cmd zip ${{
-    set -f
-    mkdir $1
-    cp -r $fx $1
-    zip -r $1.zip $1
-    rm -rf $1
-}}
+cmd zip %zip -r "$f" "$f"
+cmd tar %tar cvf "$f.tar" "$f"
+cmd targz %tar cvzf "$f.tar.gz" "$f"
+cmd tarbz2 %tar cjvf "$f.tar.bz2" "$f"
 
 cmd open &{{
     case $(file --mime-type -Lb $f) in
         text/*) lf -remote "send $id \$$EDITOR \$fx";;
         *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
     esac
+}}
+
+cmd broot_jump ${{
+  f=$(mktemp)
+  res="$(broot --outcmd $f && cat $f | sed 's/cd //')"
+  rm -f "$f"
+  if [ -f "$res" ]; then
+    cmd="select"
+  elif [ -d "$res" ]; then
+    cmd="cd"
+  fi
+  lf -remote "send $id $cmd \"$res\""
 }}
 
 ## REMAPS
@@ -83,21 +87,33 @@ map o
 map d
 map c
 map e
-map f
 
 # basics
 map . set hidden!
+
 map p paste
 map x cut
 map y copy
-map af mkfile
-map ad mkdir
-map ch chmod
 map r rename
+map C clear
+
 map H top
 map L bottom
 map R reload
-map C clear
+
+map cf mkfile
+map cd mkdir
+map ch chmod
+
+map az zip
+map at tar
+map ag targz
+map ab tarbz2
+map ae extract
+
+map f broot_jump
+map '/' :setfilter; filter
+map '<esc>' setfilter
 
 ## QUICK GOTO
 map gtr cd ~/.trash

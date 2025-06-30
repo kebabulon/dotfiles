@@ -91,3 +91,19 @@ if [ -z "$TMUX" ]
 then
     tmux new-session -A -s main
 fi
+
+
+# TODO: dont put this here...
+export EDITOR="vim"
+export VISUAL="nvim"
+export SUDO_EDITOR="nvim"
+export READER="zathura"
+export TERMINAL="foot"
+export BROWSER="firefox"
+export VIDEO="mpv"
+# export IMAGE="sxiv"
+export COLORTERM="truecolor"
+export OPENER="xdg-open"
+export PAGER="less"
+export WM="sway"
+# export LAUNCHER="tofi"
