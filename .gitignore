@@ -2,3 +2,5 @@ nvim/.config/nvim/lazy-lock.json
 
 mpd/.config/mpd/database
 mpd/.config/mpd/sticker.sql
+
+ncmpcpp/.config/ncmpcpp/lyrics

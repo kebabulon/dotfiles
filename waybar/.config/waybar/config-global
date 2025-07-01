@@ -6,6 +6,7 @@
     "modules-right": [
         "tray",
         "pulseaudio", 
+        "mpd",
         "pulseaudio#source",
         "network", 
         "bluetooth",
@@ -161,6 +162,34 @@
 
         "tooltip": true,
         "tooltip-format": "Volume: {volume}%\n{desc}",
+    },
+
+    "mpd": {
+        "format": "",
+        "format-disconnected": "",
+        "format-stopped": "󰝛",
+        "format-paused": "",
+        "interval": 2,
+        "consume-icons": {
+            "on": " " // Icon shows only when "consume" is on
+        },
+        "random-icons": {
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": ""
+        },
+        "single-icons": {
+            "on": "󰑘"
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+        "tooltip-format-disconnected": "MPD (disconnected)",
+        "on-click": "mpc toggle",
+        "on-click-right": "mpc stop",
     },
 
     "pulseaudio#source": {

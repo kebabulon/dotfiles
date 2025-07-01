@@ -2,3 +2,5 @@
 copy-command = "wl-copy"
 fullscreen = true
 initial-tool = "crop"
+disable-notifications = true
+actions-on-enter = ["save-to-clipboard", "exit"]

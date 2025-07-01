@@ -1,4 +1,5 @@
 mpd_music_dir = ~/music
+lyrics_directory = ~/.config/ncmpcpp/lyrics
 
 data_fetching_delay = no
 allow_for_physical_item_deletion = no
@@ -17,7 +18,7 @@ visualizer_autoscale                  = yes
 visualizer_spectrum_smooth_look       = yes
 
 user_interface = alternative
-titles_visibility = no
+# titles_visibility = no
 
 # song_list_format                      = $(red){%a}$(end) $(blue){%t}$(end) $R $(green){%b}$(end) $(magenta)({%l})$(end)
 # song_status_format                    = {$2%a$2} {$3%b$3} {$5%t$5}

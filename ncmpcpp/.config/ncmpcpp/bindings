@@ -22,3 +22,12 @@ def_key "N"
 
 def_key "."
     show_lyrics
+
+def_key "d"
+  delete_playlist_items
+def_key "d"
+  delete_browser_items
+def_key "d"
+  delete_stored_playlist
+
+    
