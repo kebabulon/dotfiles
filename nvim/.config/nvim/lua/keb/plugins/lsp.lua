@@ -1,77 +1,54 @@
 return {
     {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v3.x',
-        lazy = true,
-        config = false,
-        init = function()
-            -- Disable automatic setup, we are doing it manually
-            vim.g.lsp_zero_extend_cmp = 0
-            vim.g.lsp_zero_extend_lspconfig = 0
-        end,
-    },
-
-    {
         'williamboman/mason.nvim',
         lazy = false,
         config = true,
     },
 
-    -- Autocompletion
     {
-        'hrsh7th/nvim-cmp',
-        event = 'InsertEnter',
-        dependencies = {
-            {'L3MON4D3/LuaSnip'},
+        'saghen/blink.cmp',
+        dependencies = { 'rafamadriz/friendly-snippets' },
+
+        version = '1.*',
+
+        opts = {
+            keymap = { preset = 'super-tab' },
+
+            appearance = {
+                nerd_font_variant = 'mono'
+            },
+
+            completion = { documentation = { auto_show = false } },
+
+            sources = {
+                default = { 'lsp', 'path', 'snippets', 'buffer' },
+            },
+
+            fuzzy = { implementation = "prefer_rust_with_warning" }
         },
-        config = function()
-            -- Here is where you configure the autocompletion settings.
-            local lsp_zero = require('lsp-zero')
-            lsp_zero.extend_cmp()
-
-            -- And you can configure cmp even more, if you want to.
-            local cmp = require('cmp')
-            local cmp_action = lsp_zero.cmp_action()
-
-            local cmp_select = {behavior = cmp.SelectBehavior.Select}
-            cmp.setup({
-                formatting = lsp_zero.cmp_format({details = true}),
-                mapping = cmp.mapping.preset.insert({
-                    ['<C-t>'] = cmp.mapping.confirm({ select = true }),
-                    ['<C-l>'] = cmp.mapping.select_prev_item(cmp_select),
-                    ['<C-h>'] = cmp.mapping.select_next_item(cmp_select),
-                }),
-                snippet = {
-                    expand = function(args)
-                        require('luasnip').lsp_expand(args.body)
-                    end,
-                },
-            })
-        end
+        opts_extend = { "sources.default" }
     },
 
-    -- LSP
+    {
+        "folke/lazydev.nvim",
+        ft = "lua", -- only load on lua files
+        opts = {
+            library = {
+                -- See the configuration section for more details
+                -- Load luvit types when the `vim.uv` word is found
+                { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+            },
+        },
+    },
+
     {
         'neovim/nvim-lspconfig',
-        cmd = {'LspInfo', 'LspInstall', 'LspStart'},
-        event = {'BufReadPre', 'BufNewFile'},
+        cmd = { 'LspInfo', 'LspInstall', 'LspStart' },
+        event = { 'BufReadPre', 'BufNewFile' },
         dependencies = {
-            {'hrsh7th/cmp-nvim-lsp'},
-            {'williamboman/mason-lspconfig.nvim'},
+            { 'williamboman/mason-lspconfig.nvim' },
         },
         config = function()
-            -- This is where all the LSP shenanigans will live
-            local lsp_zero = require('lsp-zero')
-            lsp_zero.extend_lspconfig()
-
-            --- if you want to know more about lsp-zero and mason.nvim
-            --- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
-            lsp_zero.on_attach(function(client, bufnr)
-                -- see :help lsp-zero-keybindings
-                -- to learn the available actions
-                lsp_zero.default_keymaps({buffer = bufnr})
-            end)
-
             require('mason-lspconfig').setup({
                 ensure_installed = {},
                 handlers = {
@@ -79,16 +56,40 @@ return {
                     -- it applies to every language server without a "custom handler"
                     function(server_name)
                         local opts = {}
-                        if server_name == 'lua_ls' then
-                            opts.settings = {
-                                Lua = {
-                                    diagnostics = { globals = { 'vim' } }
-                                }
-                            }
-                        end
+                        -- if server_name == 'lua_ls' then
+                        --     opts.settings = {
+                        --         Lua = {
+                        --             diagnostics = { globals = { 'vim' } }
+                        --         }
+                        --     }
+                        -- end
                         require('lspconfig')[server_name].setup(opts)
                     end
                 }
+            })
+
+            vim.diagnostic.config({
+                virtual_lines = { current_line = true },
+                underline = true,
+                update_in_insert = false,
+                severity_sort = true,
+                current_line = true,
+                float = {
+                    border = "rounded",
+                    source = true,
+                },
+                signs = {
+                    text = {
+                        [vim.diagnostic.severity.ERROR] = "󰅚 ",
+                        [vim.diagnostic.severity.WARN] = "󰀪 ",
+                        [vim.diagnostic.severity.INFO] = "󰋽 ",
+                        [vim.diagnostic.severity.HINT] = "󰌶 ",
+                    },
+                    numhl = {
+                        [vim.diagnostic.severity.ERROR] = "ErrorMsg",
+                        [vim.diagnostic.severity.WARN] = "WarningMsg",
+                    },
+                },
             })
         end
     }
