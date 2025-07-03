@@ -137,7 +137,12 @@ map gm cd ~/music
 map gd cd ~/downloads
 map gD cd ~/documents
 map ge cd ~/desktop
-map gw cd ~/dotfiles/wallpapers/.wallpapers
+
+map gi. cd ~/pictures
+map giw cd ~/pictures/wallpapers
+map gis cd ~/pictures/screenshots
+
+map gv cd ~/videos
 
 map gp cd ~/projects
 map gu cd ~/documents/uni

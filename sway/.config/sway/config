@@ -46,7 +46,7 @@ input "1133:49298:Logitech_G102_LIGHTSYNC_Gaming_Mouse" {
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec firefox
 bindsym $mod+d exec $menu
-bindsym print exec grim - | satty --filename - --fullscreen --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png
+bindsym print exec grim - | satty --filename - --output-filename ~/pictures/screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png
 bindsym $mod+z exec swaylock
 
 exec $term -w 1600x900 --app-id foot_math ipython 
@@ -166,7 +166,7 @@ bindsym $mod+less exec "mpc -q prev"
 ## vis
 
 # output * bg ~/.wallpapers/feet_of_clay_dark.jpg fill
-set $wallpapers_path ~/.wallpapers/current
+set $wallpapers_path ~/pictures/wallpapers/current
 output * bg `find $wallpapers_path -type f | shuf -n 1` fill
 
 font FiraCode 7
