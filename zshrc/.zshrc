@@ -1,3 +1,8 @@
+# interactive only
+[[ $- != *i* ]] && return
+
+set -o emacs
+
 # history
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -83,7 +88,7 @@ plugins=(
 )
 plugin-source $plugins
 
-compstyle ohmyzsh
+# compstyle ohmyzsh
 
 eval "$(zoxide init --cmd cd zsh)"
 
@@ -92,18 +97,3 @@ then
     tmux new-session -A -s main
 fi
 
-
-# TODO: dont put this here...
-export EDITOR="vim"
-export VISUAL="nvim"
-export SUDO_EDITOR="nvim"
-export READER="zathura"
-export TERMINAL="foot"
-export BROWSER="firefox"
-export VIDEO="mpv"
-# export IMAGE="sxiv"
-export COLORTERM="truecolor"
-export OPENER="xdg-open"
-export PAGER="less"
-export WM="sway"
-# export LAUNCHER="tofi"

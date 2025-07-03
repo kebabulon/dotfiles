@@ -1,9 +1,0 @@
-ignore-empty-password
-font=Fira Code
-
-image=~/.wallpapers/lockscreen_wallpaper.png
-
-indicator-idle-visible
-indicator-x-position=675
-indicator-y-position=520
-indicator-radius=100

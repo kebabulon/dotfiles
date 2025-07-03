@@ -30,4 +30,8 @@ def_key "d"
 def_key "d"
   delete_stored_playlist
 
-    
+def_key "1"
+  show_playlist
+
+def_key "1"
+  run_external_command "~/.config/ncmpcpp/cover"

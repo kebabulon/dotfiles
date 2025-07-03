@@ -1,5 +1,5 @@
 mpd_music_dir = ~/music
-lyrics_directory = ~/.config/ncmpcpp/lyrics
+lyrics_directory = ~/.cache/ncmpcpp/lyrics
 
 data_fetching_delay = no
 allow_for_physical_item_deletion = no
@@ -8,13 +8,14 @@ incremental_seeking = yes
 seek_time = 5
 
 visualizer_data_source                = /tmp/mpd.fifo
+# visualizer_data_source                = /tmp/epicfaillmao
 visualizer_output_name                = my_fifo
 visualizer_in_stereo                  = yes
-visualizer_type                       = spectrum
+visualizer_type                       = wave_filled
 visualizer_color                      = blue, cyan, green, yellow, magenta, red
-visualizer_look                       = os
-visualizer_fps                        = 60
-visualizer_autoscale                  = yes
+visualizer_look                       = "os" # os
+visualizer_fps                        = 30
+visualizer_autoscale                  = no
 visualizer_spectrum_smooth_look       = yes
 
 user_interface = alternative
@@ -27,3 +28,12 @@ user_interface = alternative
 # song_columns_list_format              = (28)[210]{a} (36)[218]{t} (29)[183]{b} $R(8)[184]{l}
 # playlist_display_mode                 = columns
 # browser_display_mode                  = columns
+
+# startup_screen = visualizer
+# startup_slave_screen = playlist  
+# startup_slave_screen_focus = yes
+# locked_screen_width_part = 20
+
+# execute_on_song_change="~/.config/ncmpcpp/cover"
+# execute_on_player_state_change="~/.config/ncmpcpp/cover"
+

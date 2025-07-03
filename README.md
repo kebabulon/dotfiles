@@ -9,6 +9,7 @@ my dotfiles
 ## install
 
 ```bash
+cd ~/dotfiles
 stow *foldername*
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # in tmux -> prefix+I

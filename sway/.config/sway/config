@@ -65,6 +65,9 @@ bindsym $mod+p [app_id="foot_music"] scratchpad show
 for_window [app_id="firefox" title="^Picture-in-Picture$"] \
     floating enable, sticky enable, move position 1370 790
 
+for_window [app_id="dragon-drop"] \
+    floating enable, sticky enable
+
 for_window [app_id="satty" title="^satty$"] fullscreen enable
 
 bindsym $mod+Shift+q kill
@@ -153,11 +156,11 @@ bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -1%"
 bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
 
 # mpc
-bindsym $mod+F3 exec "mpc volume +1"
-bindsym $mod+F2 exec "mpc volume -1"
-bindsym $mod+F1 exec "mpc toggle"
-bindsym $mod+greater exec "mpc next"
-bindsym $mod+less exec "mpc prev"
+bindsym $mod+F3 exec "mpc -q volume +1"
+bindsym $mod+F2 exec "mpc -q volume -1"
+bindsym $mod+F1 exec "mpc -q toggle"
+bindsym $mod+greater exec "mpc -q next"
+bindsym $mod+less exec "mpc -q prev"
 
 
 ## vis

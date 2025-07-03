@@ -1,0 +1,22 @@
+#!/bin/bash
+
+{
+    file="$HOME/music/$(mpc --format %file% current)"
+    album=${file%/*}
+
+    art=$(find $album -maxdepth 1 | grep -m 1 ".*\.\(jpg\|png\|gif\|bmp\)")
+    if [ "$art" = "" ]; then
+        err=$(ffmpeg -loglevel 16 -y -i "$file" -f image2 -pixel_format rgba -an -vcodec mjpeg /tmp/coverart.png 2>&1)
+        if [ "$err" = "" ]; then
+            art=$(chafa -f sixel --size "50x50" --view-size 20x20 --animate off --polite on /tmp/coverart.png)
+        else
+            art=$(chafa -f sixel --size "50x50" --view-size 20x20 --animate off --polite on ~/.config/ncmpcpp/joy.png)
+        fi
+    else
+        art=$(chafa -f sixel --size "50x50" --view-size 20x20 --animate off --polite on $art)
+    fi
+
+
+    sleep .05
+    printf "\e[8;0H%s" $art
+} &
