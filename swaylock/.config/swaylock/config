@@ -1,7 +1,7 @@
 ignore-empty-password
 font=Fira Code
 
-image=~/.wallpapers/lockscreen_wallpaper.png
+image=~/pictures/wallpapers/lockscreen_wallpaper.png
 
 indicator-idle-visible
 indicator-x-position=675

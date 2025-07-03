@@ -24,7 +24,7 @@ alias c='clear'
 alias '..'='cd ..'
 alias vim=nvim
 
-lfcd () {
+lf () {
     # `command` is needed in case `lfcd` is aliased to `lf`
     cd "$(command lf -print-last-dir "$@")"
 }
