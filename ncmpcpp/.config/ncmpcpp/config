@@ -1,6 +1,8 @@
 mpd_music_dir = ~/music
 lyrics_directory = ~/.cache/ncmpcpp/lyrics
 
+media_library_primary_tag = album_artist
+
 data_fetching_delay = no
 allow_for_physical_item_deletion = no
 

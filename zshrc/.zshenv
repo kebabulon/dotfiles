@@ -11,3 +11,6 @@ export COLORTERM="truecolor"
 export PAGER="less"
 export WM="sway"
 # export LAUNCHER="tofi"
+
+path=("$HOME/.local/bin" "$path[@]")
+export PATH
