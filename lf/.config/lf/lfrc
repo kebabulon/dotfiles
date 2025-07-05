@@ -68,17 +68,18 @@ cmd open &{{
     esac
 }}
 
-cmd broot_jump ${{
-  f=$(mktemp)
-  res="$(broot --outcmd $f && cat $f | sed 's/cd //')"
-  rm -f "$f"
-  if [ -f "$res" ]; then
-    cmd="select"
-  elif [ -d "$res" ]; then
-    cmd="cd"
-  fi
-  lf -remote "send $id $cmd \"$res\""
-}}
+# TODO: broot kinda sucks, maybe research it later?
+# cmd broot_jump ${{
+#   f=$(mktemp)
+#   res="$(broot --outcmd $f && cat $f | sed 's/cd //')"
+#   rm -f "$f"
+#   if [ -f "$res" ]; then
+#     cmd="select"
+#   elif [ -d "$res" ]; then
+#     cmd="cd"
+#   fi
+#   lf -remote "send $id $cmd \"$res\""
+# }}
 
 cmd copy_to_clipboard &{{
     printf '%s' "$f" | wl-copy
@@ -159,6 +160,8 @@ map gu cd ~/documents/uni
 
 map gni cd ~/.local/share/nicotine/downloads
 
+# TODO: this breaks if i open another lf instance
+# but i also dont wanna use mktemp, ehh...
 push m-
 map Q quit
 map q push '-Q
