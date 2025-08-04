@@ -55,7 +55,7 @@ for_window [app_id="foot_math"] resize set width 1600 height 900
 for_window [app_id="foot_math"] border pixel 4
 bindsym $mod+m [app_id="foot_math"] scratchpad show
 
-exec $term -w 1600x900 --app-id foot_music ncmpcpp
+exec $term -w 1600x900 --app-id foot_music rmpc
 for_window [app_id="foot_music"] move scratchpad
 for_window [app_id="foot_music"] resize set width 1600 height 900
 for_window [app_id="foot_music"] border pixel 4

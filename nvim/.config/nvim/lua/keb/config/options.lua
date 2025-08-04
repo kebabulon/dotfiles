@@ -12,12 +12,11 @@ vim.opt.smartindent = true
 
 vim.opt.wrap = false
 
--- swapfile good, actually
+-- swapfile is good, actually
 vim.opt.swapfile = true
 -- vim.opt.backup = false
 
--- TODO: figure this out, not a fan of ~/.vim
--- vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undodir = os.getenv("HOME") .. "/.local/share/nvim/undodir"
 vim.opt.undofile = true
 
 vim.opt.hlsearch = true
