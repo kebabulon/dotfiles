@@ -41,10 +41,10 @@
         "adapter": "ACAD",
 
         "format": "{icon}\n{capacity}",
-        "format-charging": " 󰂄\n{capacity}", 
+        "format-charging": "󰂄\n{capacity}", 
         // you can add additional format-{power-status}, just check /sys/class/power_supply/<bat>/status and replace {power-status} with given output
 
-        "format-full": " 󰂄\n{capacity}",
+        "format-full": "󰂄\n{capacity}",
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
 
         "tooltip": true,

@@ -21,11 +21,11 @@ output "GIGA-BYTE TECHNOLOGY CO., LTD. M28U 24050B004110" {
 }
 
 output "Chimei Innolux Corporation 0x1521 Unknown" {
-    # mode 1920x1080@144Hz
+    mode 1920x1080@60Hz
     pos 2560 0
 }
 
-output * adaptive_sync on
+output * adaptive_sync off
 
 # output HDMI1 pos 0 0 res 1920x1080
 # output eDP2 pos -1920 0 res 1920x1080
@@ -189,6 +189,7 @@ hide_edge_borders smart_no_gaps
 exec_always sh -c "killall waybar; waybar -c ~/.config/waybar/config-sway &"
 
 exec mako
+exec udiskie
 
 # bar {
 #     position top

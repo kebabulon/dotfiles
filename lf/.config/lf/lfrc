@@ -39,9 +39,9 @@ cmd trash %set -f; mv $fx ~/.trash
 cmd dragon %dragon-drop -a -x $fx
 cmd dragon-stay %dragon-drop -a $fx
 cmd dragon-individual %dragon-drop $fx
-#cmd cpdragon %cpdragon
-#cmd mvdragon %mvdragon
-#cmd dlfile %dlfile
+cmd cpdragon %cpdragon
+cmd mvdragon %mvdragon
+cmd dlfile %dlfile
 
 # archive
 cmd extract ${{
@@ -130,9 +130,9 @@ map ae extract
 map dr dragon
 map ds dragon-stay
 map di dragon-individual
-#map dm mvdragon
-#map dc cpdragon
-#map dl dlfile
+map dm mvdragon
+map dc cpdragon
+map dl dlfile
 
 map f broot_jump
 
@@ -159,6 +159,8 @@ map gp cd ~/projects
 map gu cd ~/documents/uni
 
 map gni cd ~/.local/share/nicotine/downloads
+
+map gf cd  /run/media/keb
 
 # TODO: this breaks if i open another lf instance
 # but i also dont wanna use mktemp, ehh...
